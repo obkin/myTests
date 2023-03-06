@@ -12,6 +12,16 @@
 
 // ---Main---
 
+const century = (year) => {
+    if (typeof year === 'string') {
+        getCentury(year);
+    } else if (typeof year === 'number') {
+        getCentury(year.toString());
+    } else {
+        throw new Error('Invalid year :/');
+    }
+};
+
 const getCentury = (year) => {
 
     if (year.length === 4) {
@@ -29,9 +39,11 @@ const getCentury = (year) => {
         console.log(1);
     }
 
-}
+};
 
-getCentury('20');
+century('988');
+century(13);
+century(1978);
 
 // ---Main---
 
